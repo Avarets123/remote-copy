@@ -1,0 +1,17 @@
+FROM python:3.9.23-slim-bullseye
+
+RUN apt-get update -y && \
+  apt-get install -y ca-certificates openssh-client openssl sshpass
+
+COPY requirements.txt /requirements.txt
+RUN pip3 install -r /requirements.txt
+
+RUN mkdir -p /opt/tools
+
+COPY entrypoint.sh /opt/tools/entrypoint.sh
+RUN chmod +x /opt/tools/entrypoint.sh
+
+COPY app.py /opt/tools/app.py
+RUN chmod +x /opt/tools/app.py
+
+ENTRYPOINT ["/opt/tools/entrypoint.sh"]
