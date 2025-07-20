@@ -55,7 +55,7 @@ e.g.
 #### ssh scp ssh pipelines
 ```yaml
 - name: ssh scp ssh pipelines
-  uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+  uses: Avarets123/remote-copy
   env:
     WELCOME: "ssh scp ssh pipelines"
     LASTSSH: "Doing something after copying"
@@ -83,7 +83,7 @@ e.g.
 #### scp ssh pipelines
 ```yaml
 - name: scp ssh pipelines
-  uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+  uses: Avarets123/remote-copy
   env:
     LASTSSH: "Doing something after copying"
   with:
@@ -101,7 +101,7 @@ e.g.
 #### scp pipelines
 ```yaml
 - name: scp pipelines
-  uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+  uses: Avarets123/remote-copy
   with:
     host: ${{ secrets.DC_HOST }}
     user: ${{ secrets.DC_USER }}
